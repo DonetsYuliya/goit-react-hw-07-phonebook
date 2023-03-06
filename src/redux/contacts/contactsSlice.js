@@ -39,7 +39,7 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContact.fulfilled, (store, { payload }) => {
         store.isLoading = false;
-        store.items.filter(item => item.id !== payload);
+        store.items = store.items.filter(item => item.id !== payload);
       })
       .addCase(deleteContact.rejected, (store, { payload }) => {
         store.isLoading = false;
